@@ -1,2 +1,2 @@
-export * from './app.component';
+export * from './youtube-search.component';
 export * from './app.module';
