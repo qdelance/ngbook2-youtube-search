@@ -1,4 +1,4 @@
-import { Component } from "@angular/core/src/metadata/directives";
+import { Component, Output } from "@angular/core/src/metadata/directives";
 import { OnInit, EventEmitter, ElementRef } from "@angular/core";
 import { SearchResult } from "./search-result";
 import { Observable } from "rxjs";
@@ -8,15 +8,14 @@ import { YouTubeService } from "./youtube-search.service";
  * SearchBox displays the search box and emits events based on the results
  */
 @Component({
-  outputs: ['loading', 'results'],
   selector: 'search-box',
   template: `
 <input type="text" class="form-control" placeholder="Search" autofocus>
 `
 })
 export class SearchBoxComponent implements OnInit {
-  loading: EventEmitter<boolean> = new EventEmitter<boolean>();
-  results: EventEmitter<SearchResult[]> = new EventEmitter<SearchResult[]>();
+  @Output() loading: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() results: EventEmitter<SearchResult[]> = new EventEmitter<SearchResult[]>();
 
   constructor(public youtube: YouTubeService,
               private el: ElementRef) {

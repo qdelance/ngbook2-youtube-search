@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { SearchResult } from "./search-result";
+import { Input } from "@angular/core/src/metadata/directives";
 
 @Component({
-  inputs: ['result'],
   selector: 'search-result',
   template: `
 <div class="col-sm-6 col-md-3">
@@ -18,5 +18,5 @@ import { SearchResult } from "./search-result";
 `
 })
 export class SearchResultComponent {
-  result: SearchResult;
+  @Input() result: SearchResult;
 }
