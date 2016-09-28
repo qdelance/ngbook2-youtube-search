@@ -1,8 +1,6 @@
 import { SearchResult } from "./search-result";
 import { Component } from "@angular/core";
 
-// let loadingGif: string = ((<any>window).__karma__) ? '' : require('images/loading.gif');
-
 @Component({
   selector: 'youtube-search',
   template: `
@@ -12,7 +10,7 @@ import { Component } from "@angular/core";
     <img
     style="float: right;"
     *ngIf="loading"
-    src='xxx' />
+    src='assets/loading.gif' />
   </h1>
   </div>
   <div class="row">
